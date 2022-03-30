@@ -5,8 +5,8 @@ compare input vs random
 output win lose or tie
 */
 
+//returns random computer (rock, paper or scissors)
 function computerPlay(){
-    //returns computer random (rock, paper or scissors)
     var randomNumber =  Math.floor(Math.random() * 3);
     if(randomNumber == 0){
         return "rock";
@@ -76,15 +76,12 @@ function play(computerSelection, playerSelection){
 }
 */
 
-//console.log(play(computerPlay(),playerSelection()));
-
 function game(){
     var tie = 0;
     var win = 0;
     var lose = 0;
-    for (let i = 0; i < 2; i++) {
-       var x = play(computerPlay(),playerSelection())
-       //pwede ata alisin ito?
+    while (win!=5 && lose!=5) {
+        var x = play(computerPlay(),playerSelection())
         if(x=="TIE!"){
             console.log("TIE!");
             tie++;
@@ -97,7 +94,8 @@ function game(){
         }
     }
     console.log("win :"+win);
-    console.log("tie :"+tie);
+    //console.log("tie :"+tie);
     console.log("lose :"+lose);
 }
 
+document.getElementById("clickMe").onclick = game;
