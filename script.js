@@ -77,25 +77,26 @@ function play(computerSelection, playerSelection){
 */
 
 function game(){
-    var tie = 0;
-    var win = 0;
-    var lose = 0;
-    while (win!=5 && lose!=5) {
+    var player = 0;
+    var computer= 0;
+    //while (player!=5 && computer!=5) {
         var x = play(computerPlay(),playerSelection())
-        if(x=="TIE!"){
-            console.log("TIE!");
-            tie++;
-        }else if(x=="YOU WIN!"){
+       if(x=="YOU WIN!"){
             console.log("YOU WIN!");
-            win++;
         }else{
-            console.log("YOU LOSE!");
-            lose++;
+            computer++;
         }
-    }
-    console.log("win :"+win);
-    //console.log("tie :"+tie);
-    console.log("lose :"+lose);
+    //}
+    //console.log("win :"+win);
+    // //console.log("tie :"+tie);
+    //console.log("lose :"+lose);
+    const computerScore = document.getElementById('computerScore')
+    computerScore.textContent = "Computer: " +computer;
+    computerScore.append();
+
+    const playerScore = document.getElementById('playerScore')
+    playerScore.textContent = "You: " +player;
+    playerScore.append();
 }
 
 document.getElementById("clickMe").onclick = game;
