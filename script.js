@@ -1,10 +1,3 @@
-/* 
-create random generator of 3 choices for computer
-create input collector of 3 choices
-compare input vs random
-output win lose or tie
-*/
-
 //returns random computer (rock, paper or scissors)
 function computerPlay(){
     var randomNumber =  Math.floor(Math.random() * 3);
@@ -51,30 +44,7 @@ function play(computerSelection, playerSelection){
         }
     }
 }
-/*
-function play(computerSelection, playerSelection){
-    //compares computer and player selection returns WIN LOSE or TIE
-    console.log(computerSelection)
-    console.log(playerSelection)  
-    // Logical &&
-    if(computerSelection == playerSelection){
-        return "TIE";
-    
-    }else if(computerSelection=="rock" && playerSelection=="paper"){
-        return "YOU WIN!";
-    }else if(computerSelection=="rock" && playerSelection=="scissors"){
-        return "YOU LOSE!";
-    }else if(computerSelection=="paper" && playerSelection=="scissors"){
-        return "YOU WIN!";
-    }else if(computerSelection=="paper" && playerSelection=="rock"){
-        return "YOU LOSE!";
-    }else if(computerSelection=="scissors" && playerSelection=="paper"){
-        return "YOU WIN!";
-    }else{
-        return "YOU LOSE!";
-    }
-}
-*/
+
 
 function game(){
     var player = 0;
@@ -99,4 +69,32 @@ function game(){
     playerScore.append();
 }
 
-document.getElementById("clickMe").onclick = game;
+//document.getElementById("clickMe").onclick = game;
+
+//creating new code for ui
+
+function play() {
+    //maybe better with ul-li tags
+
+    const container = document.getElementById('play');
+    const aRock = document.createElement('a');
+    aRock.setAttribute('href', '#'); 
+    //youDiv.classList.add('rockDiv');
+    aRock.textContent = 'Rock';
+
+    const aPaper = document.createElement('a');
+    aPaper.setAttribute('href', '#'); 
+    aPaper.textContent = 'Paper';
+
+    const aScissors = document.createElement('a');
+    aScissors.setAttribute('href', '#'); 
+    aScissors.textContent = 'Scissors';
+
+    container.appendChild(aRock);
+    container.appendChild(aPaper);
+    container.appendChild(aScissors);
+    
+    
+}
+
+
