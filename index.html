@@ -8,34 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body> 
-    <input type="button" value="PLAY" onclick="play();">
-    <div class="choices">
-        <div class="column">
-            <a href=""><div id="rock">rock</div>
-                <!--img src="images/rock.png" alt=""-->
-            </a>
+    <input type="button" value="PLAY" onclick="show();">
+    <div id="hidden">
+        <div class="choices">
+            <div class="column">
+                <input type="image" src="images/rock.png" alt="" value="rock" onclick="playerSelection(this.value)"/>
+                    
+            </div>
+            <div class="column">
+                <input type="image" src="images/paper.png" alt="" value="paper" onclick="playerSelection(this.value)"/>
+                    <!--img src="images/paper.png" alt=""-->
+            </div>
+            <div class="column">
+                <input type="image" src="images/scissors.png" alt="" value="scissors" onclick="playerSelection(this.value)"/>
+                    <!--img src="images/scissors.png" alt=""-->
+            </div>
         </div>
-        <div class="column">
-            <a href=""><div>paper</div>
-                <!--img src="images/paper.png" alt=""-->
-            </a>
-        </div>
-        <div class="column">
-            <a href=""><div>scissors</div>
-                <!--img src="images/scissors.png" alt=""-->
-            </a>
-        </div>
+
+        <br>
+        <h3>Score</h3>
+        <div id="playerScore">You: </div>
+        <div id="computerScore">Computer: </div>
     </div>
 
-    <h3>Score</h3>
-    <div id="playerScore">You: </div>
-    <div id="computerScore">Computer: </div>
-    
     <br>
     <div class="credit"> &copy <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
     <script src="script.js"></script>
-    
-    <br>
-    <div id="play"> </div>
 </body>
 </html>
