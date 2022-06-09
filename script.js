@@ -1,6 +1,8 @@
 function show(){
-    const show = document.getElementById('hidden');
-    show.style.visibility= "visible";
+    const main = document.getElementById('main');
+    main.style.visibility= "visible";
+    const playButton = document.getElementById('playButton')
+    playButton.style.visibility= "hidden";
 }
 
 //returns random computer (rock, paper or scissors)
@@ -24,8 +26,6 @@ var tie = 0;
 
 function playerSelection(playerSelected){
     var playerSelected = playerSelected;
-
-    //while (player!=5 && computer!=5) {
         var result = compare(computerPlay(),playerSelected)
         if(result=="YOU WIN!"){
             player++
@@ -37,14 +37,10 @@ function playerSelection(playerSelected){
             tie++;
             appendResult()
         }
-    //}
 }
 
 function compare(computerSelection, playerSelection){
     //compares computer and player selection returns WIN LOSE or TIE
-    console.log("Computer: "+computerSelection)
-    console.log("You: "+playerSelection)
-    //nested if statement style
     if(computerSelection == playerSelection){
         return "TIE!";
     }else{
@@ -78,6 +74,20 @@ function appendResult(){
     const playerScore = document.getElementById('playerScore')
     playerScore.textContent = "You: " +player;
     playerScore.append();
+
+    if(player==5){
+        test()
+    }else if(computer==5){
+        test()
+    }else{}
+}
+function test(){
+    const main = document.getElementById('main');
+        main.textContent = ""//FIX
+        const playButton = document.getElementById('playButton')
+        playButton.style.visibility = "visible";
+        playButton.innerText = "PLAY AGAIN?";
+        
 }
 
 function compterChoice(result){
@@ -94,6 +104,7 @@ function compterChoice(result){
 }
 
 function tie(){
+ 
     const show = document.getElementById('hidden');
     show.style.visibility= "visible";
 }

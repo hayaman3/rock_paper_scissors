@@ -1,4 +1,15 @@
-#hidden{
+#playButton{
+    border-radius: 8px;
+    background-color: white;
+    transition-duration: 0.4s;
+    border: 1.3px solid;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#playButton:hover {
+    background-color: rgb(220, 217, 217);
+}
+#main{
     visibility:hidden;
 }
 #choices{
@@ -12,11 +23,6 @@
 }
 .column{
     padding: 5px;
-}
-
-img{
-    max-height: 50px;
-    max-width: 50px;
 }
 
 input{
@@ -41,7 +47,7 @@ a:visited {
 }
 
 a:hover {
-    color: rgba(128, 128, 128, 0.726);
+    color: rgb(128, 128, 128);
     text-decoration: none;
 }
 
@@ -57,4 +63,5 @@ img:hover{
     height: 50px;
     width: 32px;
     background-size: contain;
+    background-repeat: no-repeat;
 }
