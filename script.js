@@ -1,8 +1,17 @@
-function show(){
-    const main = document.getElementById('main');
-    main.style.visibility= "visible";
-    const playButton = document.getElementById('playButton')
-    playButton.style.visibility= "hidden";
+var toggled = false;
+function toggle(){
+    if(!toggled){
+        toggled = true;
+        document.getElementById("main").style.visibility = "visible";
+        document.getElementById('playButton').style.visibility = "hidden";
+        return;
+    }
+    if(toggled){
+        toggled = false;
+        document.getElementById("main").style.visibility = "hidden";
+        document.getElementById('playButton').style.visibility = "visible";
+        return;
+    }
 }
 
 //returns random computer (rock, paper or scissors)
@@ -16,7 +25,7 @@ function computerPlay(){
     }else{
         result = "scissors";
     } 
-    compterChoice(result);
+    compterChoiceAppend(result);
     return result;
 }
 
@@ -75,24 +84,32 @@ function appendResult(){
     playerScore.textContent = "You: " +player;
     playerScore.append();
 
-    if(player==5){
-        test()
-    }else if(computer==5){
-        test()
+    if(player==3){
+        winner("playerWin")
+    }else if(computer==3){
+        winner("computerWin")
     }else{}
 }
-function test(){
-    const main = document.getElementById('main');
-        main.textContent = ""//FIX
-        const playButton = document.getElementById('playButton')
-        playButton.style.visibility = "visible";
-        playButton.innerText = "PLAY AGAIN?";
-        
+function winner(winner){
+    if(winner=="playerWin"){
+        reusableCode();
+        alert("YOU WIN!")
+    }else{
+        reusableCode();
+        console.log("YOU LOSE!")
+    }
+}
+function reusableCode(){
+    toggle();
+    playButton.innerText = "PLAY AGAIN?";
+    document.getElementById('computerChoice').style.visibility= "hidden";
+    player=0;
+    computer=0;
 }
 
-function compterChoice(result){
+function compterChoiceAppend(result){
     var result = result
-    const show = document.getElementById('computerChoice');
+    var show = document.getElementById('computerChoice');
     show.style.visibility= "visible";
     if(result=="rock"){
         show.style.backgroundImage = "url('images/rock.png')";
@@ -105,6 +122,5 @@ function compterChoice(result){
 
 function tie(){
  
-    const show = document.getElementById('hidden');
-    show.style.visibility= "visible";
+   
 }
