@@ -1,19 +1,3 @@
-var toggled = false;
-function toggle(){
-    if(!toggled){
-        toggled = true;
-        document.getElementById("main").style.visibility = "visible";
-        document.getElementById('playButton').style.visibility = "hidden";
-        return;
-    }
-    if(toggled){
-        toggled = false;
-        document.getElementById("main").style.visibility = "hidden";
-        document.getElementById('playButton').style.visibility = "visible";
-        return;
-    }
-}
-
 //returns random computer (rock, paper or scissors)
 function computerPlay(){
     var result = ""
@@ -25,7 +9,6 @@ function computerPlay(){
     }else{
         result = "scissors";
     } 
-    compterChoiceAppend(result);
     return result;
 }
 
@@ -33,23 +16,31 @@ var computer = 0;
 var player = 0;
 var tie = 0;
 
-function playerSelection(playerSelected){
-    var playerSelected = playerSelected;
-        var result = compare(computerPlay(),playerSelected)
-        if(result=="YOU WIN!"){
-            player++
-            appendResult()
-        }else if(result=="YOU LOSE!"){
-            computer++;
-            appendResult()
-        }else{
-            tie++;
-            appendResult()
-        }
+function startPlay(playerSelection){
+    var computerSelection = computerPlay()
+    updateScore(computerSelection,playerSelection)
+   
+    const playerScore = document.getElementById('playerScore');
+    const computerScore = document.getElementById('computerScore');
+    switch (compare(computerSelection,playerSelection)){
+    case "YOU WIN!":
+        player++
+        playerScore.textContent = "You: "+player;
+        break;
+    case "YOU LOSE!":
+        computer++
+        computerScore.textContent = "Computer: "+computer;
+        break;
+    }
+
+    if(player==2||computer==2){
+        alert("game end")
+    }
+
 }
 
+//compares computer and player selection returns WIN LOSE or TIE
 function compare(computerSelection, playerSelection){
-    //compares computer and player selection returns WIN LOSE or TIE
     if(computerSelection == playerSelection){
         return "TIE!";
     }else{
@@ -75,52 +66,30 @@ function compare(computerSelection, playerSelection){
     }
 }
 
-function appendResult(){
-    const computerScore = document.getElementById('computerScore')
-    computerScore.textContent = "Computer: " +computer;
-    computerScore.append();
-
-    const playerScore = document.getElementById('playerScore')
-    playerScore.textContent = "You: " +player;
-    playerScore.append();
-
-    if(player==3){
-        winner("playerWin")
-    }else if(computer==3){
-        winner("computerWin")
-    }else{}
-}
-function winner(winner){
-    if(winner=="playerWin"){
-        reusableCode();
-        alert("YOU WIN!")
-    }else{
-        reusableCode();
-        console.log("YOU LOSE!")
+function updateScore(computerSelection,playerSelection) {
+    const playerSign = document.getElementById('playerSign')
+    const computerSign = document.getElementById('computerSign')
+    switch (playerSelection) {
+      case 'rock':
+        playerSign.textContent = '✊'
+        break
+      case 'paper':
+        playerSign.textContent = '✋'
+        break
+      case 'scissors':
+        playerSign.textContent = '✌'
+        break
     }
-}
-function reusableCode(){
-    toggle();
-    playButton.innerText = "PLAY AGAIN?";
-    document.getElementById('computerChoice').style.visibility= "hidden";
-    player=0;
-    computer=0;
-}
-
-function compterChoiceAppend(result){
-    var result = result
-    var show = document.getElementById('computerChoice');
-    show.style.visibility= "visible";
-    if(result=="rock"){
-        show.style.backgroundImage = "url('images/rock.png')";
-    }else if(result=="paper"){
-    show.style.backgroundImage = "url('images/paper.png')";
-    }else{
-        show.style.backgroundImage = "url('images/scissors.png')";
+  
+    switch (computerSelection) {
+      case 'rock':
+        computerSign.textContent = '✊'
+        break
+      case 'paper':
+        computerSign.textContent = '✋'
+        break
+      case 'scissors':
+        computerSign.textContent = '✌'
+        break
     }
-}
-
-function tie(){
- 
-   
-}
+  }
