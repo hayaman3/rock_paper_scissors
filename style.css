@@ -94,3 +94,26 @@ a:active {
 img:hover{
     opacity:.8;
 }
+#modal{
+    z-index: 1;
+    position:absolute;
+    display:none;
+    top: 30%;
+    left:0;
+    right:0;
+    margin: auto;
+    width: 200px;
+    background-color: #D3EBCD;
+    box-shadow: 1px 1px 6px rgba(0,0,0,.4);
+    padding: 2px;
+}
+#backdrop{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+  }

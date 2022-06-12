@@ -16,7 +16,7 @@ var computer = 0;
 var player = 0;
 var tie = 0;
 
-function startPlay(playerSelection){
+function playRound(playerSelection){
     var computerSelection = computerPlay()
     updateScore(computerSelection,playerSelection)
    
@@ -33,10 +33,12 @@ function startPlay(playerSelection){
         break;
     }
 
-    if(player==2||computer==2){
-        alert("game end")
+    if(player==5){
+        modal("YOU WIN!")
     }
-
+    if(computer==5){
+        modal("YOU LOSE!")
+    }
 }
 
 //compares computer and player selection returns WIN LOSE or TIE
@@ -93,3 +95,27 @@ function updateScore(computerSelection,playerSelection) {
         break
     }
   }
+
+function modal(winner){
+    const modal = document.getElementById('modal');
+    modal.style.display = "block";
+    const backdrop = document.getElementById('backdrop');
+    backdrop.style.display = "block";
+    const modalMessage = document.getElementById('modalMessage');
+    modalMessage.textContent = winner;
+}
+
+function playAgain(){
+    const modal = document.getElementById('modal');
+    modal.style.display = "none";
+    const backdrop = document.getElementById('backdrop');
+    backdrop.style.display = "none";
+
+    playerSign.textContent = '❔'
+    computerSign.textContent = '❔'
+    computerScore.textContent = "Computer: 0";
+    playerScore.textContent = "You: 0";
+    player = 0;
+    computer = 0;
+    tie = 0;
+}

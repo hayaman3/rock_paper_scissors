@@ -12,44 +12,49 @@
     <link rel="manifest" href="favicon_io/site.webmanifest">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header>
     <h3>ROCK PAPER SCISSORS</h3>
     </header>
     <div id="main">
-        
         <div id="score">
             <div id="computerChoice">
                 <div id="computerSign">❔</div>
-                <h5><p id="computerScore">Computer: </p></h5>
+                <h5><p id="computerScore">Computer: 0</p></h5>
             </div>
             <div id="playerChoice">
                 <div id="playerSign">❔</div>
-                <h5><p id="playerScore">You: </p></h5>
+                <h5><p id="playerScore">You: 0</p></h5>
             </div>
         </div>
 
         <div id="choices">
             <div class="column">
-                <button class="choice" id="rock" value="rock" onclick="startPlay(this.value)"> 
-                    <div class="sign">✊</div>                </button>
+                <button class="choice" id="rock" value="rock" onclick="playRound(this.value)"> 
+                    <div class="sign">✊</div> 
+                </button>
             </div>
             <div class="column">
-                <button class="choice" id="paper" value="paper" onclick="startPlay(this.value)">
+                <button class="choice" id="paper" value="paper" onclick="playRound(this.value)">
                     <div class="sign">✋</div>
                 </button>
             </div>
             <div class="column">
-                <button class="choice" id="scissors" value="scissors" onclick="startPlay(this.value)">
+                <button class="choice" id="scissors" value="scissors" onclick="playRound(this.value)">
                     <div class="sign">✌</div>
                 </button>
             </div>
         </div>
-        <!-- <div id="credit"> &copy <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
-       
 
+        <div id="modal">
+            <h1 id="modalMessage"></h1>
+            <button onclick="playAgain()">play again</button>
+        </div>
+        <div id="backdrop">
+
+        </div>
+        <!-- <div id="credit"> &copy <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
         <script src="script.js"></script> 
         
     </div>
