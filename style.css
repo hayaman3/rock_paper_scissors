@@ -14,6 +14,9 @@ header{
     align-items: center;
     justify-content: space-evenly;
     max-width: 400px;
+    left:0;
+    right:0;
+    margin: auto;
 }
 button{
     cursor: pointer;
@@ -33,11 +36,14 @@ button{
     display:flex;
     justify-content: space-between;
     padding-right: 0px;
+    max-width: 300px;
+    left:0;
+    right:0;
+    margin: auto;
 }
 .column{
     padding: 5px;
 }
-
 .choice{
     margin:0;
     padding:0;
@@ -46,20 +52,12 @@ button{
     border: none;
     border-radius: 10%;
     background-color: #AEDBCE;
-}
-#rock{
+    transition: transform .2s;
     font-size: 60px;
     color: #635666;
 }
-
-#paper{
-    font-size: 60px; 
-    color: #635666;
-}
-
-#scissors{
-    font-size: 60px;
-    color: #635666;
+.choice:hover{
+    transform: scale(1.1);
 }
 
 input{
@@ -98,14 +96,28 @@ img:hover{
     z-index: 1;
     position:absolute;
     display:none;
-    top: 30%;
+    top: 20%;
     left:0;
     right:0;
     margin: auto;
     width: 200px;
+    border-radius: 5%;
     background-color: #D3EBCD;
-    box-shadow: 1px 1px 6px rgba(0,0,0,.4);
-    padding: 2px;
+    padding: 10px;
+}
+#modalButton{
+    border: none;
+    border-radius: 8%;
+    padding: 10px 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    background-color: #AEDBCE;
+    color: #635666;
+    transition-duration: 0.4s;
+}
+#modalButton:hover{
+    background-color: #635666;
+    color: #AEDBCE;
 }
 #backdrop{
     display: none;
