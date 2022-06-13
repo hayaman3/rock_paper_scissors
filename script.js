@@ -22,7 +22,7 @@ function playRound(playerSelection){
    
     const playerScore = document.getElementById('playerScore');
     const computerScore = document.getElementById('computerScore');
-    switch (compare(computerSelection,playerSelection)){
+    switch (compareHand(computerSelection,playerSelection)){
     case "YOU WIN!":
         player++
         playerScore.textContent = "You: "+player;
@@ -32,17 +32,14 @@ function playRound(playerSelection){
         computerScore.textContent = "Computer: "+computer;
         break;
     }
-
     if(player==5){
-        modal("YOU WIN!")
+        showModal("YOU WIN!")
     }
     if(computer==5){
-        modal("YOU LOSE!")
+        showModal("YOU LOSE!")
     }
 }
-
-//compares computer and player selection returns WIN LOSE or TIE
-function compare(computerSelection, playerSelection){
+function compareHand(computerSelection, playerSelection){
     if(computerSelection == playerSelection){
         return "TIE!";
     }else{
@@ -96,7 +93,7 @@ function updateScore(computerSelection,playerSelection) {
     }
   }
 
-function modal(winner){
+function showModal(winner){
     const modal = document.getElementById('modal');
     modal.style.display = "block";
     const backdrop = document.getElementById('backdrop');
