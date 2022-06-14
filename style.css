@@ -1,9 +1,14 @@
+:root{
+    --text: #635666;
+    --background-light: #D3EBCD;
+    --background-dark: #AEDBCE;
+}
 body{
     background-color: #D3EBCD;
-    color:#635666;
+    color:var(--text);
 }
 header{
-   color: #635666;
+   color: var(--text);
    text-align: center;
 }
 #main{
@@ -51,10 +56,10 @@ button{
     width: 70px;
     border: none;
     border-radius: 10%;
-    background-color: #AEDBCE;
+    background-color: var(--background-dark);
     transition: transform .2s;
     font-size: 60px;
-    color: #635666;
+    color: var(--text);
 }
 .choice:hover{
     transform: scale(1.1);
@@ -69,7 +74,7 @@ button{
     margin: auto;
     width: 200px;
     border-radius: 5%;
-    background-color: #D3EBCD;
+    background-color: var(--background-light);
     padding: 10px;
 }
 #modalButton{
@@ -78,13 +83,13 @@ button{
     padding: 10px 20px;
     margin-top: 25px;
     margin-bottom: 15px;
-    background-color: #AEDBCE;
-    color: #635666;
+    background-color: var(--background-dark);
+    color: var(--text);
     transition-duration: 0.4s;
 }
 #modalButton:hover{
-    background-color: #635666;
-    color: #AEDBCE;
+    background-color: var(--text);
+    color: var(--background-dark);
 }
 #backdrop{
     display: none;

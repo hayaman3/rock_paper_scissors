@@ -39,6 +39,7 @@ function playRound(playerSelection){
         showModal("YOU LOSE!")
     }
 }
+
 function compareHand(computerSelection, playerSelection){
     if(computerSelection == playerSelection){
         return "TIE!";
@@ -91,7 +92,7 @@ function updateScore(computerSelection,playerSelection) {
         computerSign.textContent = '✌'
         break
     }
-  }
+}
 
 function showModal(winner){
     const modal = document.getElementById('modal');
