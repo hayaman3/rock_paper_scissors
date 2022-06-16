@@ -17,6 +17,7 @@ var player = 0;
 var tie = 0;
 
 function playRound(playerSelection){
+    fadeIn(playerSelection);
     var computerSelection = computerPlay()
     updateScore(computerSelection,playerSelection)
    
@@ -70,27 +71,27 @@ function updateScore(computerSelection,playerSelection) {
     const playerSign = document.getElementById('playerSign')
     const computerSign = document.getElementById('computerSign')
     switch (playerSelection) {
-      case 'rock':
-        playerSign.textContent = '✊'
-        break
-      case 'paper':
-        playerSign.textContent = '✋'
-        break
-      case 'scissors':
-        playerSign.textContent = '✌'
-        break
+        case 'rock':
+            playerSign.textContent = '✊'
+            break
+        case 'paper':
+            playerSign.textContent = '✋'
+            break
+        case 'scissors':
+            playerSign.textContent = '✌'
+            break
     }
   
     switch (computerSelection) {
-      case 'rock':
-        computerSign.textContent = '✊'
-        break
-      case 'paper':
-        computerSign.textContent = '✋'
-        break
-      case 'scissors':
-        computerSign.textContent = '✌'
-        break
+        case 'rock':
+            computerSign.textContent = '✊'
+            break
+        case 'paper':
+            computerSign.textContent = '✋'
+            break
+        case 'scissors':
+            computerSign.textContent = '✌'
+            break
     }
 }
 
@@ -117,3 +118,42 @@ function playAgain(){
     computer = 0;
     tie = 0;
 }
+
+function fadeIn(playerSelection) {
+    switch (playerSelection) {
+        case 'rock':
+            paper.classList.toggle('fade');
+            scissors.classList.toggle('fade');
+            break
+        case 'paper':
+            rock.classList.toggle('fade');
+            scissors.classList.toggle('fade');
+            break
+        case 'scissors':
+            paper.classList.toggle('fade');
+            rock.classList.toggle('fade');
+            break
+    }
+}
+
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
+
+rock.addEventListener('transitionend',function(){
+    rock.classList.remove('fade');
+    paper.classList.remove('fade');
+    scissors.classList.remove('fade');
+})
+
+paper.addEventListener('transitionend',function(){
+    rock.classList.remove('fade');
+    paper.classList.remove('fade');
+    scissors.classList.remove('fade');
+})
+
+scissors.addEventListener('transitionend',function(){
+    rock.classList.remove('fade');
+    paper.classList.remove('fade');
+    scissors.classList.remove('fade');
+})

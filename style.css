@@ -62,7 +62,30 @@ button{
     color: var(--text);
 }
 .choice:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
+    background-color: var(--text);
+    color: var(--background-dark);
+}
+#rock{
+    opacity: 1;
+    transition: opacity .4s; 
+}
+#rock.fade{
+    opacity: 0;
+}
+#paper{
+    opacity: 1;
+    transition: opacity .4s; 
+}
+#paper.fade{
+    opacity: 0;
+}
+#scissors{
+    opacity: 1;
+    transition: opacity .4s; 
+}
+#scissors.fade{
+    opacity: 0;
 }
 #modal{
     z-index: 1;
