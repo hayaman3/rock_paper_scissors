@@ -4,25 +4,33 @@
     --background-dark: #AEDBCE;
 }
 body{
+    padding:0;
+    margin:0;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-content: space-between;
     background-color: #D3EBCD;
     color:var(--text);
+
 }
 header{
    color: var(--text);
    text-align: center;
 }
 
-#main{
+main{
     text-align: center;
+    flex-grow: 1;
 }
 #score{
     display:flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap:5vw;
     max-width: 400px;
-    left:0;
-    right:0;
     margin: auto;
+    flex-wrap: wrap;
 }
 button{
     cursor: pointer;
@@ -38,13 +46,11 @@ button{
 }
 #choices{
     font-weight: 100;
-    margin: 5px;
     display:flex;
-    justify-content: space-between;
-    padding-right: 0px;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:5vw;
     max-width: 300px;
-    left:0;
-    right:0;
     margin: auto;
 }
 .column{
@@ -58,12 +64,11 @@ button{
     border: none;
     border-radius: 10%;
     background-color: var(--background-dark);
-    transition: transform .2s;
     font-size: 60px;
     color: var(--text);
 }
 .choice:hover{
-    transform: scale(1.2);
+    transform: scale(1.11);
     background-color: var(--text);
     color: var(--background-dark);
 }
@@ -86,7 +91,7 @@ button{
     transition: opacity .4s; 
 }
 #scissors.fade{
-    opacity: 0;
+    opacity: 0; 
 }
 #modal{
     z-index: 1;
@@ -126,16 +131,13 @@ button{
     opacity: 0.8;
 }
 footer{
-    position:absolute;
-    bottom:0px;
-    height:var(--footer-height);
+    align-self: flex-end;
     width: 100%;
     display:flex;
     align-content: center;
     justify-content: center;
     text-align: center;
-    opacity:.9;
-    gap:40px;
+    gap:3em;
     padding-top:10px;
     border-top: grey solid 1px;
     opacity: .8;
